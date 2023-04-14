@@ -1,23 +1,42 @@
 #include <iostream>
 using namespace std;
+int normal[4][10], premium[10], i;
 
-class layout{
+
+class pre{
 	public:
-  int normal[4][20],premium[20];
+	void park() {
+        for (i = 0; i < 10; i++) {
+            if (premium[i] == 0) {
+                cout << "Your parking slot number: " << i << endl;
+                premium[i] = 1;
+                break;
+            }
+        
+        }
+    }
 };
 
-class premium:public layout{
-	 void park(){
-     for(i=0;i<4;i++)
-	{
-		for(j=0;j<2;j++)
-		{
-			cout<<"\t"<<arr[i][j];
-		}
-		cout<<endl;
+class nor{
+  public:
+  void park(){
+    for(int i = 0; i < 4; i++) {
+      int asig;
+    	for(int j = 0; j < 10; j++) {
+        if(normal[i][j]==0){
+          cout<<"Your parking floor="<<i<<" slot= "<<j<<endl;
+          normal[i][j]=1;
+          asig=1;
+          break;
+        }
+      }
+		if(asig==1){
+      break;
+    }
+    }
 	}
-   }
 };
+
 
 class fee{
 	
@@ -55,20 +74,25 @@ cout<<endl;
     cout<<"\t\t\t\t\t\t  * * *       *       * * *       *      * * * *  *       *\n";
     cout<<"\t\t\t=========================================================================================================================\n";
     cout<<endl;
-  	
   
-		cout<<"what kind of parking do you want? "<<endl;
-  	cout<<"1. Normal \n 2. Premium"<<endl;
+  	pre hehe;
+  	nor haha;
+  	int t=0;
+  	while(t==0){  
+	cout<<"what kind of parking do you want? "<<endl;
+  	cout<<"1. Normal  2. Premium"<<endl;
   	int opinion;
-  	cin>>opinion;
+		cin>>opinion;
+  	
   	if(opinion==1){
-      
+      haha.park();
     }
   	else if(opinion==2){
-       
+       hehe.park();
     }
   	else{
       cout<<"wrong input"<<endl;
+    }
     }
   	
 return 0;
