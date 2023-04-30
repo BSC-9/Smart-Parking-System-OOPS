@@ -83,8 +83,8 @@ cout<<endl;
     cout<<"\t\t\t=========================================================================================================================\n";
     cout<<endl;
   
-  	pre hehe;
-  	nor haha;
+  	pre a;
+  	nor b;
   	int t=0;
   	while(t==0){  
 	cout<<"what kind of parking do you want? "<<endl;
@@ -97,14 +97,14 @@ cout<<endl;
       cout<<"How long are you going to park:"<<endl<<"1.less than an hour\t2.more than an hour"<<endl;
       cin>>dur_choice;
       if(dur_choice==1){
-      haha.park();
+      a.park();
       }
       else if(dur_choice==2){
-        haha.slowpark();
+        b.slowpark();
       }
     }
   	else if(opinion==2){
-       hehe.park();
+       a.park();
     }
   	else{
       cout<<"wrong input"<<endl;
