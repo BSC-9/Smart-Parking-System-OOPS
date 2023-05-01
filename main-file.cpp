@@ -28,7 +28,7 @@ class nor{
     	for(int j = 0; j < 10; j++) {
         if(normal[i][j]==0){
           cout<<"Your parking floor="<<i<<" slot= "<<j<<endl;
-          cout<<"Enter how many Hours you stayed in the mall: ";
+          cout<<"Enter how many minutes you stayed in the mall: ";
           cin>>time;
           normal[i][j]=1;
           asig=1;
@@ -46,7 +46,7 @@ class nor{
     	for(int j = 0; j < 10; j++) {
         if(normal[i][j]==0){
           cout<<"Your parking floor="<<i<<" slot= "<<j<<endl;
-          cout<<"Enter how many minutes you stayed in the mall: ";
+          cout<<"Enter how many hours you stayed in the mall: ";
           cin>>time;
           normal[i][j]=1;
           asig=1;
