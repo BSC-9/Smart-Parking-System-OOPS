@@ -1,18 +1,22 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
-int normal[4][10], premium[10], i;
-float time;
-
+int normal[4][10], premium[10], i, timex;
 
 class pre{
 	public:
+    int e1,e2,x1,x2;
 	void park() {
         for (i = 0; i < 10; i++) {
             if (premium[i] == 0) {
                 cout << "Your parking slot number: " << i << endl;
-                cout<<"Enter how many hours you stayed in the mall: ";
-                cin>>time;
+                cout<<"Enter the time you entered(hrs and mins): ";
+                cin>>e1>>e2;
+                cout<<"Enter the time you exited(hrs and mins): ";
+                cin>>x1>>x2;
+                timex = ((x1*60)+x2)-((e1*60)+e2);
                 premium[i] = 1;
+                system("cls");
                 break;
             }
 
@@ -22,16 +26,20 @@ class pre{
 
 class nor{
   public:
+      int e1,e2,x1,x2;
   void park(){
     for(int i = 0; i < 4; i++) {
       int asig;
     	for(int j = 0; j < 10; j++) {
         if(normal[i][j]==0){
-          cout<<"Your parking floor="<<i<<" slot= "<<j<<endl;
-          cout<<"Enter how many minutes you stayed in the mall: ";
-          cin>>time;
+          cout<<"Enter the time you entered(hrs and mins): ";
+                cin>>e1>>e2;
+                cout<<"Enter the time you exited(hrs and mins): ";
+                cin>>x1>>x2;
+                timex = ((x1*60)+x2)-((e1*60)+e2);
           normal[i][j]=1;
           asig=1;
+          system("cls");
           break;
         }
       }
@@ -45,11 +53,14 @@ class nor{
       int asig;
     	for(int j = 0; j < 10; j++) {
         if(normal[i][j]==0){
-          cout<<"Your parking floor="<<i<<" slot= "<<j<<endl;
-          cout<<"Enter how many hours you stayed in the mall: ";
-          cin>>time;
+          cout<<"Enter the time you entered(hrs and mins): ";
+                cin>>e1>>e2;
+                cout<<"Enter the time you exited(hrs and mins): ";
+                cin>>x1>>x2;
+                timex = ((x1*60)+x2)-((e1*60)+e2);
           normal[i][j]=1;
           asig=1;
+          system("cls");
           break;
         }
       }
@@ -63,20 +74,20 @@ class nor{
 
 class fee : public pre,public nor{
 public:
-    float fare,total;
+    int fare,total;
         void nor_fast(){
-            fare=2.0;
-            total = fare*time;
+            fare=2;
+            total = fare*timex;
             cout<<"please pay: RS "<<total<<endl;
         }
         void nor_slow() {
-            fare=60.0;
-            total = fare*time;
+            fare=1;
+            total = fare*timex;
             cout<<"please pay: RS "<<total<<endl;
         }
         void pre() {
-            fare=200.0;
-            total = fare*time;
+            fare=3;
+            total = fare*timex;
             cout<<"please pay: RS "<<total<<endl;
         }
 };
